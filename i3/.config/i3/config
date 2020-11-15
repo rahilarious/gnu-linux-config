@@ -1,0 +1,162 @@
+# i3 config file (v4)
+# Please see https://i3wm.org/docs/userguide.html for a complete reference!
+
+##################      i3rc    ###############
+
+# start programs 
+exec --no-startup-id polybar hookabar
+
+
+set $mod Mod4
+font pango:DejaVu Sans Mono 12
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+focus_follows_mouse no
+
+##################      Window Workspace Management     ###########
+
+# kill focused window
+bindsym $mod+q kill
+
+# change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# default workspace layout
+#workspace_layout tabbed
+
+#default tiling split 
+default_orientation vertical
+
+
+bindsym $mod+v split h
+bindsym $mod+c split v
+bindsym $mod+f fullscreen toggle
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle floating
+bindsym $mod+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+Shift+space focus mode_toggle
+
+# focus the parent/child container
+bindsym $mod+a focus parent
+bindsym $mod+Shift+a focus child
+
+# Define names for default workspaces for which we configure key bindings later on.
+# We use variables to avoid repeating the names in multiple places.
+set $ws1 "1:Default"
+set $ws2 "2:Work"
+set $ws3 "3:Music"
+set $ws4 "4:Other"
+
+# switch to workspace
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+# exit i3 (logs you out of your X session)
+bindsym $mod+x exec "i3-nagbar -t warning -m 'Do you really want to exit i3? This will end your X session !!' -B 'Yes, exit i3' 'i3-msg exit'"
+
+# resize window (you can also use the mouse for that)
+bindsym $mod+r mode "resize"
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape or $mod+r
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
+}
+
+# Remove title bars and set borders to 5 pixel
+default_border pixel 5
+# floating_maximum_size 1000 x 1000
+
+# change colors of borders
+# class                 border  backgr. text    indicator child_border
+client.focused          #000000 #ff5722 #ffffff #00ff00   #ff5722
+client.unfocused        #444444 #111111 #dddddd #0000ff   #000000
+
+
+################        MISC keybindings        ##########
+
+# Use pactl to adjust volume in PulseAudio.
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10%
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
+
+# Brightness key bindings (need x11-apps/xbacklight for xbacklight.)
+bindsym XF86MonBrightnessUp exec xbacklight -inc 5
+bindsym XF86MonBrightnessDown exec xbacklight -dec 5
+
+#Toggle Touchpad
+bindsym XF86TouchpadToggle exec ~/.sexyscripts/toggletouchpad.sh
+
+
+###################      special treatments to this bois          ##########
+for_window [title="Volume Control"] floating enable
+for_window [title="CopyQ"] floating enable
+
+
+
+#############  programs specific bindings    ##########
+
+# i3lock with wallpaper and failed lock attempts
+bindsym $mod+z exec --no-startup-id i3lock -f -i /common/wallpapers/gentoo/4c-gentoo.png && sleep 3 && xset dpms force off
+
+bindsym $mod+Return exec --no-startup-id kitty
+bindsym $mod+Tab exec --no-startup-id dmenu_run -i
+bindsym Print exec --no-startup-id flameshot gui
+
+#2 for 2factor authentication
+bindsym $mod+Control+b exec --no-startup-id firefox -no-remote -P ChadBoi
+bindsym $mod+Control+c exec --no-startup-id chromium
+bindsym $mod+Control+f exec --no-startup-id firefox
+bindsym $mod+Control+g exec --no-startup-id copyq show
+bindsym $mod+Control+h exec --no-startup-id kitty -T htop htop -t
+bindsym $mod+Control+k exec --no-startup-id keepassxc
+bindsym $mod+Control+o exec --no-startup-id sudo openvpn --config /common/userconfig/openvpn/anony.ovpn 
+bindsym $mod+Control+p exec --no-startup-id pavucontrol
+bindsym $mod+Control+t exec --no-startup-id thunar
+bindsym $mod+Control+v exec --no-startup-id vlc
