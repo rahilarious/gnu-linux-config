@@ -39,7 +39,7 @@ alias myip='curl https://ifconfig.me/ip'
 
 # gcc system info
 alias infogcc='gcc -march=native -Q --help=target'
-alias infonvidiaprimerenderoffload='__NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia '
+alias nvprime='__NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia '
 
 #mount specific devices
 alias mntrouterusb='read -p "What is the name of USB? " usbname && sudo mount -t cifs -o guest,uid=1000 //192.168.1.1/"${usbname}" /mnt/router'
@@ -119,6 +119,7 @@ alias cfgpolybar='vim ~/.config/polybar/config'
 alias nwallpaper='nitrogen --set-zoom-fill --random /common/wallpapers/'
 alias dwallpaper='nitrogen --set-zoom-fill /common/wallpapers/gentoo/btw-i-use-gentoo-1.png'
 alias kittyssh='kitty +kitten ssh'
+alias icat='kitty +kitten icat' #image cat
 alias dccstatus='distcc-config --get-hosts && grep -i -e "makeopts" /etc/portage/make.conf'
 alias dccon-lenovo="sudo distcc-config --set-hosts 'localhost/7 192.168.1.96/3' && distcc-config --get-hosts && sudo sed -i -E {s:'MAKEOPTS=\".+\"':'MAKEOPTS=\"-j10 -l8\"':g} /etc/portage/make.conf && grep -i -e 'makeopts' /etc/portage/make.conf"
 alias dccon-hp="sudo distcc-config --set-hosts 'localhost/7 192.168.1.143/4' && distcc-config --get-hosts && sudo sed -i -E {s:'MAKEOPTS=\".+\"':'MAKEOPTS=\"-j11 -l8\"':g} /etc/portage/make.conf && grep -i -e 'makeopts' /etc/portage/make.conf"

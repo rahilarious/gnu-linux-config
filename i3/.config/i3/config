@@ -110,11 +110,16 @@ mode "resize" {
 
 # Remove title bars and set borders to 5 pixel
 default_border pixel 4
+
+# Configure gaps between windows
+gaps inner 10
+
+
 # floating_maximum_size 1000 x 1000
 
 # change colors of borders
 # class                 border  backgr. text    indicator child_border
-client.focused          #000000 #ff5722 #ffffff #00ff00   #ff5722
+client.focused          #000000 #ff7043 #ffffff #ffffff   #ff7043
 client.unfocused        #444444 #111111 #dddddd #0000ff   #000000
 
 
