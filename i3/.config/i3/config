@@ -109,7 +109,7 @@ mode "resize" {
 }
 
 # Remove title bars and set borders to 5 pixel
-default_border pixel 5
+default_border pixel 4
 # floating_maximum_size 1000 x 1000
 
 # change colors of borders
