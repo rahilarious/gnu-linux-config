@@ -23,10 +23,12 @@ alias ssh-add='eval $(ssh-agent) && ssh-add'
 alias l='command ls -AF --color=auto --group-directories-first'
 alias ll='command ls -lAhF --color=auto --group-directories-first'
 alias ip='ip -c'
+alias diff='diff --color=always -U 1'
 alias c='clear'
 alias e='exit'
 alias lspci='lspci -nn'
 alias iotop='sudo iotop -o'
+alias sudosu='sudo -iu root'
 alias reload='. ~/.bashrc'
 alias termapp='sudo pkill -15 -i $1'
 alias chckinternet='ping -c 5 goo.gl'
@@ -73,7 +75,7 @@ alias displayoff='xset dpms force off'
 
 #Arch specifics
 alias archinstll='sudo pacman -S --needed'
-alias archrmv='sudo pacman -Rs'
+alias archrm='sudo pacman -Rs'
 alias archupdt='sudo pacman -Syu'
 alias archsrch='pacman -Ss'
 alias rflctr='sudo reflector --latest 20 --protocol https --sort rate --save /etc/pacman.d/mirrorlist'
@@ -82,7 +84,7 @@ alias rflctr='sudo reflector --latest 20 --protocol https --sort rate --save /et
 alias startopenvpn='sudo openvpn --config /common/userconfig/openvpn/anony.ovpn'
 
 # Gentoo Specifics
-alias gentooworldpretend='sudo emerge -puNDv @world'
+alias gentooworldpretend='emerge -puNDv @world'
 alias gentooworldfile='sudo vim /var/lib/portage/world'
 alias gentoouse='sudo vim /etc/portage/package.use/allinone'
 alias gentoolicense='sudo vim /etc/portage/package.license/allinone'
@@ -92,6 +94,9 @@ alias gentoomakeconf='sudo vim /etc/portage/make.conf'
 alias gentoomask='sudo vim /etc/portage/package.mask/allinone'
 alias gentooreposconf='sudo vim /etc/portage/repos.conf'
 alias gentooreposinfo='portageq repos_config /'
+alias gentooinstll='sudo emerge -a'
+alias gentoorm='sudo emerge -cav'
+alias gentoormforce='sudo emerge -Cav'
 alias gentooelog='vim /var/log/portage/elog/summary.log'
 alias gentooecleanp='sudo eclean-dist -dp'
 alias gentooeclean='sudo eclean-dist -d'
@@ -122,9 +127,9 @@ alias dwallpaper='nitrogen --set-zoom-fill /common/wallpapers/gentoo/btw-i-use-g
 alias kittyssh='kitty +kitten ssh'
 alias icat='kitty +kitten icat' #image cat
 alias dccstatus='distcc-config --get-hosts && grep -i -e "makeopts" /etc/portage/make.conf'
-alias dccon-lenovo="sudo distcc-config --set-hosts 'localhost/7 192.168.1.96/3' && distcc-config --get-hosts && sudo sed -i -E {s:'MAKEOPTS=\".+\"':'MAKEOPTS=\"-j10 -l8\"':g} /etc/portage/make.conf && grep -i -e 'makeopts' /etc/portage/make.conf"
-alias dccon-hp="sudo distcc-config --set-hosts 'localhost/7 192.168.1.143/4' && distcc-config --get-hosts && sudo sed -i -E {s:'MAKEOPTS=\".+\"':'MAKEOPTS=\"-j11 -l8\"':g} /etc/portage/make.conf && grep -i -e 'makeopts' /etc/portage/make.conf"
-alias dccon-both="sudo distcc-config --set-hosts 'localhost/7 192.168.1.96/3 192.168.1.143/4' && distcc-config --get-hosts && sudo sed -i -E {s:'MAKEOPTS=\".+\"':'MAKEOPTS=\"-j14 -l8\"':g} /etc/portage/make.conf && grep -i -e 'makeopts' /etc/portage/make.conf"
+alias dccon-lenovo="sudo distcc-config --set-hosts 'localhost/6 192.168.1.96/3' && distcc-config --get-hosts && sudo sed -i -E {s:'MAKEOPTS=\".+\"':'MAKEOPTS=\"-j9 -l8\"':g} /etc/portage/make.conf && grep -i -e 'makeopts' /etc/portage/make.conf"
+alias dccon-hp="sudo distcc-config --set-hosts 'localhost/6 192.168.1.143/4' && distcc-config --get-hosts && sudo sed -i -E {s:'MAKEOPTS=\".+\"':'MAKEOPTS=\"-j10 -l8\"':g} /etc/portage/make.conf && grep -i -e 'makeopts' /etc/portage/make.conf"
+alias dccon-both="sudo distcc-config --set-hosts 'localhost/6 192.168.1.96/3 192.168.1.143/4' && distcc-config --get-hosts && sudo sed -i -E {s:'MAKEOPTS=\".+\"':'MAKEOPTS=\"-j13 -l8\"':g} /etc/portage/make.conf && grep -i -e 'makeopts' /etc/portage/make.conf"
 alias dccoff="sudo distcc-config --set-hosts 'localhost' && distcc-config --get-hosts && sudo sed -i -E {s:'MAKEOPTS=\".+\"':'MAKEOPTS=\"-j7\"':g} /etc/portage/make.conf && grep -i -e 'makeopts' /etc/portage/make.conf"
 alias dccmon='DISTCC_DIR="/var/tmp/portage/.distcc" distccmon-gnome'
 alias dccfix='sudo ls -lahF --color=auto /var/tmp/portage/.distcc/lock/cpu_localhost_0 && sudo chown portage:portage /var/tmp/portage/.distcc/lock/cpu_localhost_0 && sudo ls -lahF --color=auto /var/tmp/portage/.distcc/lock/cpu_localhost_0'
