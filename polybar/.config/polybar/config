@@ -165,8 +165,7 @@ interface = enp59s0
 interval = 1.0
 
 format-connected-underline =
-format-connected-prefix="%{F#7C4DFF}%{F-} "
-label-connected = "(%linkspeed%)  %upspeed%  %downspeed%"
+label-connected = " %upspeed%  %downspeed% %{F#7C4DFF}%{F-} %linkspeed%"
 format-disconnected =
 
 [module/openvpn]
@@ -225,7 +224,7 @@ label-muted-foreground = ${root.foreground}
 [module/temperature]
 type = internal/temperature
 thermal-zone = 7
-warn-temperature = 80
+warn-temperature = 85
 
 format = <label>
 format-underline =

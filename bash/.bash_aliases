@@ -28,7 +28,6 @@ alias c='clear'
 alias e='exit'
 alias lspci='lspci -nn'
 alias iotop='sudo iotop -o'
-alias sudosu='sudo -iu root'
 alias reload='. ~/.bashrc'
 alias termapp='sudo pkill -15 -i $1'
 alias chckinternet='ping -c 5 goo.gl'
@@ -37,7 +36,7 @@ alias poweroff='sudo poweroff'
 alias finddir='read -p "Search Dir: " searchdir && read -p "Dir to search: " fname && find "${searchdir}" -type d -iname "${fname}" -print 2>/dev/null'
 alias findfile='read -p "Search Dir: " searchdir && read -p "File to search: " fname && find "${searchdir}" -type f -iname "${fname}" -print 2>/dev/null'
 # get current ip
-alias myip='curl https://ifconfig.me/ip'
+alias myip='curl https://ifconfig.me/ip && echo'
 
 # gcc system info
 alias infogcc='gcc -march=native -Q --help=target'
@@ -101,6 +100,8 @@ alias gentooelog='vim /var/log/portage/elog/summary.log'
 alias gentooecleanp='sudo eclean-dist -dp'
 alias gentooeclean='sudo eclean-dist -d'
 alias gentoolvmsnapshot='sudo lvcreate -v -s -L 10G -n "ss_gentoo_$(date +%d_%m_%Y)" vg_linux/lv_gentoo'
+alias gentookernelcompile='time make -j13 -l7'
+alias gentookernelinstall='read -p "Enter the kernel version: " kernelversion && make modules_install && emerge -q x11-drivers/nvidia-drivers && make install && sleep 3 && dracut -f /boot/initramfs-"${kernelversion}".img "${kernelversion}"'
 alias eq='equery -h'
 alias eqb='equery belongs'
 alias eqd='equery depends'
@@ -124,7 +125,7 @@ alias cfgpolybar='vim ~/.config/polybar/config'
 # Program specifics
 alias nwallpaper='nitrogen --set-zoom-fill --random /common/wallpapers/'
 alias dwallpaper='nitrogen --set-zoom-fill /common/wallpapers/gentoo/btw-i-use-gentoo-1.png'
-alias kittyssh='kitty +kitten ssh'
+alias kssh='kitty +kitten ssh'
 alias icat='kitty +kitten icat' #image cat
 alias dccstatus='distcc-config --get-hosts && grep -i -e "makeopts" /etc/portage/make.conf'
 alias dccon-lenovo="sudo distcc-config --set-hosts 'localhost/6 192.168.1.96/3' && distcc-config --get-hosts && sudo sed -i -E {s:'MAKEOPTS=\".+\"':'MAKEOPTS=\"-j9 -l8\"':g} /etc/portage/make.conf && grep -i -e 'makeopts' /etc/portage/make.conf"
@@ -132,4 +133,9 @@ alias dccon-hp="sudo distcc-config --set-hosts 'localhost/6 192.168.1.143/4' && 
 alias dccon-both="sudo distcc-config --set-hosts 'localhost/6 192.168.1.96/3 192.168.1.143/4' && distcc-config --get-hosts && sudo sed -i -E {s:'MAKEOPTS=\".+\"':'MAKEOPTS=\"-j13 -l8\"':g} /etc/portage/make.conf && grep -i -e 'makeopts' /etc/portage/make.conf"
 alias dccoff="sudo distcc-config --set-hosts 'localhost' && distcc-config --get-hosts && sudo sed -i -E {s:'MAKEOPTS=\".+\"':'MAKEOPTS=\"-j7\"':g} /etc/portage/make.conf && grep -i -e 'makeopts' /etc/portage/make.conf"
 alias dccmon='DISTCC_DIR="/var/tmp/portage/.distcc" distccmon-gnome'
-alias dccfix='sudo ls -lahF --color=auto /var/tmp/portage/.distcc/lock/cpu_localhost_0 && sudo chown portage:portage /var/tmp/portage/.distcc/lock/cpu_localhost_0 && sudo ls -lahF --color=auto /var/tmp/portage/.distcc/lock/cpu_localhost_0'
+alias dccfix='[ -f /var/tmp/portage/.distcc/lock/cpu_localhost_0 ] && sudo ls -lahF --color=auto /var/tmp/portage/.distcc/lock/cpu_localhost_0 && sudo chown portage:portage /var/tmp/portage/.distcc/lock/cpu_localhost_0 && sudo ls -lahF --color=auto /var/tmp/portage/.distcc/lock/cpu_localhost_0'
+
+#LAN aliases
+alias logindell='ssh gentoo@dell'
+alias loginlenovo='ssh gentoo@lenovo'
+alias loginhp='ssh gentoo@hp'
