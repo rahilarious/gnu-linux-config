@@ -182,13 +182,13 @@ click-left = sudo pkill -15 -x openvpn
 type = internal/date
 interval = 3
 
-date = 
-date-alt = " %d %b %Y %a (%W)"
+date = "%{F#ff5252}%{F-} %d-%m %a"
+date-alt = "%{F#ff5252}%{F-} %d %b %Y %a (%W)"
 
-time = "%I:%M %p"
+time = "%I:%M %p "
 time-alt = "%I:%M %p "
 
-format-prefix = " " 
+format-prefix = "%{F#FBC02D} %{F-}" 
 format-underline =
 
 label = "%time% %date%"
@@ -254,18 +254,18 @@ label-close-foreground = ${colors.foreground}
 label-separator = |
 label-separator-foreground = ${colors.primary}
 
-menu-0-0 = " "
-menu-0-0-exec = menu-open-1
-menu-0-1 = 
-menu-0-1-exec = menu-open-2
-menu-0-2 = 
-menu-0-2-exec = nitrogen --set-zoom-fill /common/wallpapers/gentoo/btw-i-use-gentoo-1.png
+menu-0-0 = " "
+menu-0-0-exec = "~/.sexyscripts/i3lock.sh"
+menu-0-1 = ""
+menu-0-1-exec = menu-open-1
+menu-0-2 = ""
+menu-0-2-exec = menu-open-2
 
 
-menu-1-0 = "%{F#FF5252}%{F-} "
+menu-1-0 = "%{F#FF0000}%{F-} "
 menu-1-0-exec = i3-msg exit
 
-menu-2-0 = "%{F#FF5252}%{F-} "
+menu-2-0 = "%{F#FF0000}%{F-} "
 menu-2-0-exec = sudo poweroff
 
 [settings]

@@ -38,6 +38,7 @@ alias findfile='read -p "Search Dir: " searchdir && read -p "File to search: " f
 # get current ip
 alias myip='curl https://ifconfig.me/ip && echo'
 alias grubupdate='sudo grub-mkconfig -o /boot/efi/grub/grub.cfg'
+alias searchkmod='read -p "Enter search term: "; lspci -k | grep -i "${REPLY}" && echo && echo && echo; lsmod | grep -i "${REPLY}"'
 
 # gcc system info
 alias infogcc='gcc -march=native -Q --help=target'
@@ -92,7 +93,7 @@ alias gentookeyword='sudo vim /etc/portage/package.accept_keywords/allinone'
 alias gentooenv='sudo vim /etc/portage/package.env/allinone'
 alias gentoomakeconf='sudo vim /etc/portage/make.conf'
 alias gentoomask='sudo vim /etc/portage/package.mask/allinone'
-alias gentooreposconf='sudo vim /etc/portage/repos.conf'
+alias gentooreposconf='sudo vim /etc/portage/repos.conf/gentoo.conf'
 alias gentooreposinfo='portageq repos_config /'
 alias gentooinstll='sudo emerge -a'
 alias gentoorm='sudo emerge -cav'

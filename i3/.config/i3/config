@@ -119,7 +119,7 @@ gaps inner 10
 
 # change colors of borders
 # class                 border  backgr. text    indicator child_border
-client.focused          #000000 #ff7043 #000000 #ff7043   #aaaaaa
+client.focused          #000000 #ff7043 #000000 #ff7043   #eeeeee
 client.unfocused        #444444 #222222 #dddddd #0000ff   #000000
 
 
@@ -148,7 +148,7 @@ for_window [title="CopyQ"] floating enable
 #############  programs specific bindings    ##########
 
 # i3lock with wallpaper and failed lock attempts
-bindsym $mod+z exec --no-startup-id i3lock -f -i /common/wallpapers/gentoo/4c-gentoo.png && sleep 3 && xset dpms force off
+bindsym $mod+z exec --no-startup-id ~/.sexyscripts/i3lock.sh
 
 bindsym $mod+Return exec --no-startup-id kitty
 bindsym $mod+Tab exec --no-startup-id dmenu_run -i
