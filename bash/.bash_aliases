@@ -85,8 +85,8 @@ alias rflctr='sudo reflector --latest 20 --protocol https --sort rate --save /et
 alias startopenvpn='sudo openvpn --config /common/userconfig/openvpn/anony.ovpn'
 
 # Gentoo Specifics
-alias gentooupdate='distcc-config --get-hosts && grep -i -e "makeopts" /etc/portage/make.conf && sudo emerge -avuND --quiet-build @world'
 alias emergeq='sudo emerge -va --quiet-build'
+alias gentooupdate='distcc-config --get-hosts && grep -i -e "makeopts" /etc/portage/make.conf && sudo emerge -avuND --quiet-build @world'
 alias gentooworldfile='sudo vim /var/lib/portage/world'
 alias gentoouse='sudo vim /etc/portage/package.use/allinone'
 alias gentoolicense='sudo vim /etc/portage/package.license/allinone'
