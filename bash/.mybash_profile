@@ -1,0 +1,7 @@
+
+# [ -f ~/.mybash_profile ] && . ~/.mybash_profile
+
+#########	start xorg server on tty1 login	(bash_profile)	#########
+if [[ -t 0 && $(tty) == "/dev/tty1" && ! $DISPLAY ]] ; then
+        startx
+fi

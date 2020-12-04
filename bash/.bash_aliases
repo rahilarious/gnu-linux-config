@@ -2,15 +2,6 @@
 # [ -f ~/.bash_aliases ] && . ~/.bash_aliases
 
 
-#########	misc	##########
-#if [[ -t 0 && $(tty) == "/dev/tty1" && ! $DISPLAY ]] ; then
-#        startx
-# fi
-
-
-
-############ 	aliases 	###########
-
 alias bashaliases='vim ~/.bash_aliases && . ~/.bashrc'
 alias ..='cd ..'
 alias ...='cd ../..'

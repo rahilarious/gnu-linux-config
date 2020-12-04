@@ -1,0 +1,15 @@
+
+# [ -f ~/.mybashrc ] && . ~/.mybashrc
+
+
+#########	start xorg server on tty1 login	(bash_profile)	#########
+#if [[ -t 0 && $(tty) == "/dev/tty1" && ! $DISPLAY ]] ; then
+#        startx
+#fi
+
+# change date color for exa to purple
+# export EXA_COLORS="da=35"
+
+# \e or \033 indicates start of escape and m indicates end. multiple color values are separated by ;
+# look at man bash and man dircolors for color values and bash values
+export PS1="\n\[\e[32;01m\][\@] \[\e[01;31m\][\u]\[\e[01;34m\] \w\[\e[00m\]\n🌹 "
