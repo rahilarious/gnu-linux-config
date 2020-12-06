@@ -41,6 +41,12 @@ alias mntrouterusb='read -p "What is the name of USB? " usbname && sudo mount -t
 alias htop='command htop -d 10'
 alias htop5='command htop -d 5'
 
+#git aliases
+alias gitaa='git add .'
+alias gits='git status'
+alias gitd='git diff'
+alias gitc='read -p "Enter commit message: " && git commit -m "${REPLY}"'
+
 # Download .snap of packages
 alias snapsrch='read -p "Search: " && curl -H "Snap-Device-Series: 16" http://api.snapcraft.io/v2/snaps/info/"${REPLY}" | grep -i url'
 
