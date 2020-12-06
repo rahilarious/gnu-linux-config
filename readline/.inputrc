@@ -1,0 +1,24 @@
+$include /etc/inputrc
+
+set editing-mode vi
+# show which mode is currently active in prompt
+set show-mode-in-prompt on
+set vi-cmd-mode-string "-N- "
+set vi-ins-mode-string "-I- "
+
+# when you close parenthesis cursor goes to opening one and then comes back to closing one
+set blink-matching-paren on
+set completion-ignore-case on
+
+# highlight typed word when auto-completing
+set colored-completion-prefix on
+# color various file types when auto-completing
+set colored-stats on
+# show file types. similar to ls -F
+set visible-stats on
+
+# if items are more than 50 show warning whether to show auto complete or not
+set completion-query-items 50
+
+# when you paste something that has newline it wont get executed automatically
+set enable-bracketed-paste on
