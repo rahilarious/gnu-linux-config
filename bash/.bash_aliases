@@ -1,4 +1,3 @@
-
 # [ -f ~/.bash_aliases ] && . ~/.bash_aliases
 
 
@@ -110,6 +109,14 @@ alias eqm='equery meta'
 alias eqw='equery which'
 alias eql='equery list'
 alias eqs='equery size'
+alias glt='genlop -t'
+alias gle='genlop -e'
+alias glc='genlop -c'
+alias glr='genlop -r | tail -n 20'
+alias gli='genlop -i'
+alias gll='genlop -l | tail -n 20'
+alias glu='genlop -u | tail -n 20'
+
 
 # Open Config and RC files
 alias cfgi3='vim ~/.config/i3/config'
