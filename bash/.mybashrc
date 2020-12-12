@@ -2,11 +2,6 @@
 # [ -f ~/.mybashrc ] && . ~/.mybashrc
 
 
-#########	start xorg server on tty1 login	(bash_profile)	#########
-#if [[ -t 0 && $(tty) == "/dev/tty1" && ! $DISPLAY ]] ; then
-#        startx
-#fi
-
 # change date color for exa to purple
 # export EXA_COLORS="da=35"
 
