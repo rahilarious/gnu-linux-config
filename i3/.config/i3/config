@@ -109,10 +109,10 @@ mode "resize" {
 }
 
 # Remove title bars and set borders to 5 pixel
-default_border pixel 3
+default_border pixel 5
 
 # Configure gaps between windows
-gaps inner 10
+gaps inner 15
 
 
 # floating_maximum_size 1000 x 1000
@@ -157,11 +157,11 @@ bindsym Print exec --no-startup-id flameshot gui
 #2 for 2factor authentication
 bindsym $mod+Control+b exec --no-startup-id firefox -no-remote -P ChadBoi
 bindsym $mod+Control+c exec --no-startup-id chromium
+bindsym $mod+Control+e exec --no-startup-id thunar
 bindsym $mod+Control+f exec --no-startup-id firefox
 bindsym $mod+Control+g exec --no-startup-id copyq show
 bindsym $mod+Control+h exec --no-startup-id kitty -T htop htop -t
 bindsym $mod+Control+k exec --no-startup-id keepassxc
 bindsym $mod+Control+o exec --no-startup-id sudo openvpn --config /common/userconfig/openvpn/anony.ovpn 
 bindsym $mod+Control+p exec --no-startup-id pavucontrol-qt
-bindsym $mod+Control+t exec --no-startup-id thunar
 bindsym $mod+Control+v exec --no-startup-id vlc
