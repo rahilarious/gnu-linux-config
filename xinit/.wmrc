@@ -1,0 +1,7 @@
+#!/bin/sh
+xbacklight -set 15
+nitrogen --set-zoom-fill --random /common/wallpapers/
+copyq &
+picom &
+lxqt-policykit-agent &
+setxkbmap -model pc105 -layout us,us -variant workman, -option grp:lalt_lshift_toggle -option rupeesign:4
