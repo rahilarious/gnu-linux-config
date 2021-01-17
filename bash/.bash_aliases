@@ -72,7 +72,7 @@ ggit='git --git-dir=/gentoo-config --work-tree=/' \
 ggita='git --git-dir=/gentoo-config --work-tree=/ add' \
 ggits='git --git-dir=/gentoo-config --work-tree=/ status' \
 ggitd='git --git-dir=/gentoo-config --work-tree=/ difftool --no-symlinks --dir-diff' \
-ggitc='read -p "Enter commit message: " && git --git-dir=/gentoo-config --work-tree=/ commit -m "${REPLY}"' \
+ggitca='read -p "Enter commit message: " && git --git-dir=/gentoo-config --work-tree=/ commit -am "${REPLY}"' \
 gen2crossdevi686='crossdev --b "2.34-r2" --k "5.4-r1" --g "9.3.0-r2" --l "2.32-r2" -oO /var/db/repos/crossdev --target i686-pc-linux-gnu' \
 gen2update='distcc-config --get-hosts && grep -i -e "makeopts" /etc/portage/make.conf && sudo emerge -avuND --keep-going --quiet-build @world' \
 gen2world='sudo vim /var/lib/portage/world' \
