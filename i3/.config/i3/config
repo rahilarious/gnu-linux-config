@@ -3,6 +3,7 @@
 
 ##################      i3rc    ###############
 
+exec --no-startup-id ~/.wmrc
 # start programs 
 exec --no-startup-id polybar hookabar
 
@@ -87,7 +88,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+x exec "i3-nagbar -t warning -m 'Do you really want to exit i3? This will end your X session !!' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym Control+Mod1+Delete exec "i3-nagbar -t warning -m 'Do you really want to exit i3? This will end your X session !!' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 bindsym $mod+r mode "resize"
@@ -109,7 +110,7 @@ mode "resize" {
 }
 
 # Remove title bars and set borders to 5 pixel
-default_border pixel 5
+default_border pixel 4
 
 # Configure gaps between windows
 gaps inner 15
@@ -155,13 +156,14 @@ bindsym $mod+Tab exec --no-startup-id rofi -show run
 bindsym Print exec --no-startup-id flameshot gui
 
 #2 for 2factor authentication
-bindsym $mod+Control+b exec --no-startup-id firefox -no-remote -P ChadBoi
 bindsym $mod+Control+c exec --no-startup-id chromium
 bindsym $mod+Control+e exec --no-startup-id thunar
 bindsym $mod+Control+f exec --no-startup-id firefox
 bindsym $mod+Control+g exec --no-startup-id copyq show
 bindsym $mod+Control+h exec --no-startup-id kitty -T htop htop -t
+bindsym $mod+Control+i exec --no-startup-id lxqt-config-input
 bindsym $mod+Control+k exec --no-startup-id keepassxc
 bindsym $mod+Control+o exec --no-startup-id sudo openvpn --config /common/userconfig/openvpn/anony.ovpn 
 bindsym $mod+Control+p exec --no-startup-id pavucontrol-qt
+bindsym $mod+Control+t exec --no-startup-id thunderbird
 bindsym $mod+Control+v exec --no-startup-id vlc

@@ -16,6 +16,7 @@ ll='command exa -labg --git --group-directories-first --color=always' \
 lld='command exa -labgD --git --color=always' \
 ip='ip -c' \
 diff='diff --color=always -U 1' \
+tree='tree -a' \
 c='clear' \
 e='exit' \
 lspci='lspci -nn' \
@@ -44,8 +45,9 @@ dir5='du -csh * | sort -hr | head -n 5' \
 dir10='du -csh * | sort -hr | head -n 10' \
 gitaa='git add .' \
 gits='git status' \
-gitd='git diff' \
+gitd='git difftool --no-symlinks --dir-diff' \
 gitc='read -p "Enter commit message: " && git commit -m "${REPLY}"' \
+gitca='read -p "Enter commit message: " && git commit -am "${REPLY}"' \
 
 #system management
 alias \
@@ -69,7 +71,7 @@ alias \
 ggit='git --git-dir=/gentoo-config --work-tree=/' \
 ggita='git --git-dir=/gentoo-config --work-tree=/ add' \
 ggits='git --git-dir=/gentoo-config --work-tree=/ status' \
-ggitd='git --git-dir=/gentoo-config --work-tree=/ diff' \
+ggitd='git --git-dir=/gentoo-config --work-tree=/ difftool --no-symlinks --dir-diff' \
 ggitc='read -p "Enter commit message: " && git --git-dir=/gentoo-config --work-tree=/ commit -m "${REPLY}"' \
 gen2crossdevi686='crossdev --b "2.34-r2" --k "5.4-r1" --g "9.3.0-r2" --l "2.32-r2" -oO /var/db/repos/crossdev --target i686-pc-linux-gnu' \
 gen2update='distcc-config --get-hosts && grep -i -e "makeopts" /etc/portage/make.conf && sudo emerge -avuND --keep-going --quiet-build @world' \
@@ -92,7 +94,7 @@ gen2eclean='sudo eclean-dist -d -t2w' \
 gen2lvmsnapshot='read -p "comment for snapshot? " && sudo lvcreate -v -s -L 10G -n "ss_gentoo_$(date +%d_%m_%Y)_${REPLY}" gnulinux/gentooroot' \
 gen2k='cd /usr/src/linux && make nconfig' \
 gen2kc='time make $(portageq envvar MAKEOPTS)' \
-gen2ki='command ls -lah --color=auto /lib/modules && read -p "Enter the kernel version: " kernelversion && make modules_install && emerge -q x11-drivers/nvidia-drivers && make install && sleep 3 && dracut -f /boot/initramfs-"${kernelversion}".img "${kernelversion}" && rm -I /boot/*old' \
+gen2ki='command ls -A --color=auto /lib/modules && read -p "Enter the kernel version: " kernelversion && make modules_install && emerge -q x11-drivers/nvidia-drivers && make install && sleep 3 && dracut -f /boot/initramfs-"${kernelversion}".img "${kernelversion}" && rm -I /boot/*old' \
 eq='equery -h' \
 eqb='equery belongs' \
 eqd='equery depends' \
@@ -120,6 +122,7 @@ cfgi3='vim ~/.config/i3/config' \
 cfgkitty='vim ~/.config/kitty/kitty.conf' \
 cfgxinit='vim ~/.xinitrc' \
 cfgpolybar='vim ~/.config/polybar/config' \
+cfglxqtob='vim ~/.config/openbox/lxqt-rc.xml' \
 
 # Program specifics
 alias \
@@ -127,13 +130,14 @@ nwallpaper='nitrogen --set-zoom-fill --random /common/wallpapers/' \
 dwallpaper='nitrogen --set-zoom-fill /common/wallpapers/gentoo/btw-i-use-gentoo-1.png' \
 kssh='kitty +kitten ssh' \
 icat='kitty +kitten icat' \
+kdiff='kitty +kitten diff' \
 dccstatus='distcc-config --get-hosts && grep -i -e "makeopts" /etc/portage/make.conf' \
-dcclenovo="sudo distcc-config --set-hosts 'localhost/6 192.168.1.96/3' && distcc-config --get-hosts && sudo sed -i -E {s:'MAKEOPTS=\".+\"':'MAKEOPTS=\"-j9 -l7.5\"':g} /etc/portage/make.conf && grep -i -e 'makeopts' /etc/portage/make.conf" \
-dcchp="sudo distcc-config --set-hosts 'localhost/6 192.168.1.143/4' && distcc-config --get-hosts && sudo sed -i -E {s:'MAKEOPTS=\".+\"':'MAKEOPTS=\"-j10 -l7.5\"':g} /etc/portage/make.conf && grep -i -e 'makeopts' /etc/portage/make.conf" \
-dccboth="sudo distcc-config --set-hosts 'localhost/6 192.168.1.96/3 192.168.1.143/4' && distcc-config --get-hosts && sudo sed -i -E {s:'MAKEOPTS=\".+\"':'MAKEOPTS=\"-j13 -l7.5\"':g} /etc/portage/make.conf && grep -i -e 'makeopts' /etc/portage/make.conf" \
-dccoff="sudo distcc-config --set-hosts 'localhost' && distcc-config --get-hosts && sudo sed -i -E {s:'MAKEOPTS=\".+\"':'MAKEOPTS=\"-j7\"':g} /etc/portage/make.conf && grep -i -e 'makeopts' /etc/portage/make.conf" \
+dcclenovo="sudo distcc-config --set-hosts 'localhost/4 192.168.1.96/3' && distcc-config --get-hosts && sudo sed -i -E {s:'MAKEOPTS=\".+\"':'MAKEOPTS=\"-j7 -l7\"':g} /etc/portage/make.conf && grep -i -e 'makeopts' /etc/portage/make.conf" \
+dcchp="sudo distcc-config --set-hosts 'localhost/4 192.168.1.143/4' && distcc-config --get-hosts && sudo sed -i -E {s:'MAKEOPTS=\".+\"':'MAKEOPTS=\"-j8 -l7\"':g} /etc/portage/make.conf && grep -i -e 'makeopts' /etc/portage/make.conf" \
+dccboth="sudo distcc-config --set-hosts 'localhost/4 192.168.1.96/3 192.168.1.143/4' && distcc-config --get-hosts && sudo sed -i -E {s:'MAKEOPTS=\".+\"':'MAKEOPTS=\"-j11 -l7\"':g} /etc/portage/make.conf && grep -i -e 'makeopts' /etc/portage/make.conf" \
+dccoff="sudo distcc-config --set-hosts 'localhost' && distcc-config --get-hosts && sudo sed -i -E {s:'MAKEOPTS=\".+\"':'MAKEOPTS=\"-j5\"':g} /etc/portage/make.conf && grep -i -e 'makeopts' /etc/portage/make.conf" \
 dccmon='DISTCC_DIR="/var/tmp/portage/.distcc" distccmon-gnome' \
-dccfix='[ -f /var/tmp/portage/.distcc/lock/cpu_localhost_0 ] && sudo ls -lahF --color=auto /var/tmp/portage/.distcc/lock/cpu_localhost_0 && sudo chown portage:portage /var/tmp/portage/.distcc/lock/cpu_localhost_0 && sudo ls -lahF --color=auto /var/tmp/portage/.distcc/lock/cpu_localhost_0' \
+dccfix='[ -f /var/tmp/portage/.distcc/lock/cpu_localhost_0 ] && sudo ls -lah --color=auto /var/tmp/portage/.distcc/lock/cpu_localhost_0 && sudo chown portage:portage /var/tmp/portage/.distcc/lock/cpu_localhost_0 && sudo ls -lah --color=auto /var/tmp/portage/.distcc/lock/cpu_localhost_0' \
 
 #LAN aliases
 alias \

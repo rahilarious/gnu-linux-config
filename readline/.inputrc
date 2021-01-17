@@ -7,7 +7,7 @@ set vi-cmd-mode-string "-N- "
 set vi-ins-mode-string "-I- "
 
 # when you close parenthesis cursor goes to opening one and then comes back to closing one
-set blink-matching-paren on
+#set blink-matching-paren on
 set completion-ignore-case on
 
 # highlight typed word when auto-completing
