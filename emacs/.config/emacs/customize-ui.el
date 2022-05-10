@@ -1,0 +1,107 @@
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(auth-source-gpg-encrypt-to '("rahil3108@gmail.com"))
+ '(circe-default-ip-family 'ipv6)
+ '(circe-default-nick "rahilarious")
+ '(circe-default-part-message "Using Circe in Emacs, weird flex but ok")
+ '(circe-default-quit-message "Using Circe in Emacs, weird flex but ok")
+ '(circe-default-realname "Rahil Bhimjiani")
+ '(circe-default-user "rahilarious")
+ '(circe-format-self-say "==> {body}")
+ '(circe-highlight-nick-type 'message)
+ '(circe-network-options
+   '(("myoftc" :host "irc.oftc.net" :port 6697 :use-tls t :tls-keylist
+      (("/home/gentooguy/.gopaniya/libera.key" "/home/gentooguy/.gopaniya/libera.pem")))
+     ("mylibera" :host "irc.ea.libera.chat" :port 6697 :use-tls t :tls-keylist
+      (("/home/gentooguy/.gopaniya/libera.key" "/home/gentooguy/.gopaniya/libera.pem"))
+      :channels
+      ("#emacs" "#gentoo"))))
+ '(circe-prompt-string "==> ")
+ '(circe-reduce-lurker-spam t)
+ '(custom-enabled-themes '(tango-dark))
+ '(custom-file (locate-user-emacs-file "customize-ui.el"))
+ '(custom-safe-themes
+   '("db5b906ccc66db25ccd23fc531a213a1afb500d717125d526d8ff67df768f2fc" "1436985fac77baf06193993d88fa7d6b358ad7d600c1e52d12e64a2f07f07176" default))
+ '(dired-auto-revert-buffer t)
+ '(dired-create-destination-dirs 'ask)
+ '(dired-do-revert-buffer t)
+ '(dired-hide-details-hide-symlink-targets nil)
+ '(dired-listing-switches "-alh --group-directories-first")
+ '(dired-use-ls-dired t)
+ '(erc-autojoin-channels-alist '(("Libera\\.Chat" "#gentoo" "#emacs")))
+ '(erc-autojoin-delay 5)
+ '(erc-autojoin-mode t)
+ '(erc-autojoin-timing 'ident)
+ '(erc-common-server-suffixes
+   '(("oftc.net\\'" . "OFTC")
+     ("libera.chat\\'" . "Libera.Chat")))
+ '(erc-hide-list '("JOIN" "PART" "QUIT"))
+ '(erc-join-buffer 'window)
+ '(erc-log-channels-directory "/tmp/erc")
+ '(erc-log-insert-log-on-open t)
+ '(erc-log-mode t)
+ '(erc-mode-line-format "%S %l %m %a")
+ '(erc-modules
+   '(autojoin button completion fill irccontrols keep-place list match menu move-to-prompt netsplit networks noncommands notifications readonly ring smiley stamp track))
+ '(erc-nick "rahilarious")
+ '(erc-prompt "==>")
+ '(erc-prompt-for-nickserv-password nil)
+ '(erc-server "irc.ipv6.libera.chat")
+ '(erc-services-mode t)
+ '(erc-use-auth-source-for-nickserv-password t)
+ '(erc-user-full-name "Rahil Bhimjiani")
+ '(eww-after-render-hook
+   '((lambda nil
+       (visual-line-mode 1)
+       (display-line-numbers-mode -1))))
+ '(eww-browse-url-new-window-is-tab nil)
+ '(eww-history-limit 1000)
+ '(eww-search-prefix "https://www.google.com/search?q=")
+ '(global-display-line-numbers-mode t)
+ '(history-delete-duplicates t)
+ '(history-length 25)
+ '(kill-do-not-save-duplicates t)
+ '(make-backup-files nil)
+ '(mode-require-final-newline 'visit-save)
+ '(mouse-autoselect-window 0.5)
+ '(network-stream-use-client-certificates t)
+ '(package-archives
+   '(("gnu" . "https://elpa.gnu.org/packages/")
+     ("nongnu" . "https://elpa.nongnu.org/nongnu/")
+     ("melpa" . "https://melpa.org/packages/")))
+ '(package-selected-packages '(nano-theme))
+ '(recentf-auto-cleanup 'never)
+ '(recentf-max-saved-items 50)
+ '(recentf-mode t)
+ '(require-final-newline 'ask)
+ '(savehist-mode t)
+ '(scroll-bar-mode nil)
+ '(shr-bullet "• ")
+ '(shr-max-width nil)
+ '(shr-table-horizontal-line 8212)
+ '(shr-table-vertical-line 65073)
+ '(shr-use-fonts nil)
+ '(size-indication-mode t)
+ '(switch-to-prev-buffer-skip t)
+ '(term-buffer-maximum-size 6144)
+ '(term-mode-hook '((lambda nil (display-line-numbers-mode -1))))
+ '(tool-bar-mode nil)
+ '(truncate-lines nil)
+ '(truncate-partial-width-windows nil)
+ '(visible-bell t))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(circe-highlight-nick-face ((t (:foreground "light coral" :weight bold))))
+ '(circe-server-face ((t (:foreground "deep sky blue"))))
+ '(diff-added ((t (:background "forest green" :extend t :inherit diff-changed))))
+ '(diff-removed ((t (:background "red2" :extend t :inherit diff-changed))))
+ '(line-number-current-line ((t (:inherit line-number :foreground "white"))))
+ '(shr-h1 ((t (:weight bold :height 1.6))))
+ '(shr-h2 ((t (:weight bold :height 1.4))))
+ '(shr-h3 ((t (:weight bold :height 1.2)))))

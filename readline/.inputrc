@@ -1,10 +1,10 @@
 $include /etc/inputrc
 
-set editing-mode vi
+# set editing-mode vi
+#set vi-cmd-mode-string "-N- "
+#set vi-ins-mode-string "-I- "
 # show which mode is currently active in prompt
-set show-mode-in-prompt on
-set vi-cmd-mode-string "-N- "
-set vi-ins-mode-string "-I- "
+#set show-mode-in-prompt on
 
 # when you close parenthesis cursor goes to opening one and then comes back to closing one
 #set blink-matching-paren on

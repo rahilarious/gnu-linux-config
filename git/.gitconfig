@@ -1,13 +1,8 @@
 [user]
-	email = 54960886+plethorahil@users.noreply.github.com
-	name = Rahil
-[diff]
-    tool = kitty
-    guitool = kitty.gui
-[difftool]
-    prompt = false
-    trustExitCode = true
-[difftool "kitty"]
-    cmd = kitty +kitten diff $LOCAL $REMOTE
-[difftool "kitty.gui"]
-    cmd = kitty kitty +kitten diff $LOCAL $REMOTE
+	name = Rahil Bhimjiani
+	email = rahil3108@gmail.com
+	signingKey = ECAD322B56177724
+[init]
+	defaultBranch = main
+[commit]
+	gpgSign = true

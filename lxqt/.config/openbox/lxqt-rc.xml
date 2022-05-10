@@ -109,15 +109,20 @@
 
        use obconf if you want to change these without having to log out
        and back in -->
-    <number>4</number>
+    <number>9</number>
     <firstdesk>1</firstdesk>
     <names>
-      <name>Default</name>
-      <name>Work</name>
-      <name>Music</name>
-      <name>Misc</name>
+      <name>1</name>
+      <name>2</name>
+      <name>3</name>
+      <name>4</name>
+      <name>5</name>
+      <name>6</name>
+      <name>7</name>
+      <name>8</name>
+      <name>9</name>
     </names>
-    <popupTime>875</popupTime>
+    <popupTime>0</popupTime>
     <!-- The number of milliseconds to show the popup for when switching
        desktops.  Set this to 0 to disable the popup. -->
   </desktops>
@@ -236,6 +241,31 @@
         <desktop>4</desktop>
       </action>
     </keybind>
+    <keybind key="W-5">
+      <action name="Desktop">
+        <desktop>5</desktop>
+      </action>
+    </keybind>
+    <keybind key="W-6">
+      <action name="Desktop">
+        <desktop>6</desktop>
+      </action>
+    </keybind>
+    <keybind key="W-7">
+      <action name="Desktop">
+        <desktop>7</desktop>
+      </action>
+    </keybind>
+    <keybind key="W-8">
+      <action name="Desktop">
+        <desktop>8</desktop>
+      </action>
+    </keybind>
+    <keybind key="W-9">
+      <action name="Desktop">
+        <desktop>9</desktop>
+      </action>
+    </keybind>
     <keybind key="W-d">
       <action name="ToggleShowDesktop"/>
     </keybind>
@@ -246,7 +276,7 @@
     <keybind key="W-m">
       <action name="ToggleMaximize"/>
     </keybind>
-    <keybind key="W-i">
+    <keybind key="W-n">
       <!-- minimize -->
       <action name="Iconify"/>
     </keybind>
@@ -295,13 +325,13 @@
     </keybind>
     <keybind key="C-W-c">
       <action name="Execute">
-        <command>chromium</command>
+        <command>firefox --no-remote -P Cooku</command>
       </action>
     </keybind>
 
     <keybind key="C-W-e">
       <action name="Execute">
-        <command>thunar</command>
+        <command>emacsclient -c</command>
       </action>
     </keybind>
     <keybind key="C-W-f">

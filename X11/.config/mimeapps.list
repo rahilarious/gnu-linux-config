@@ -1,0 +1,29 @@
+[Added Associations]
+application/octet-stream=geany.desktop;
+application/pdf=mupdf.desktop;
+application/vnd.ms-publisher=geany.desktop;
+application/x-shellscript=geany.desktop;
+application/xml=geany.desktop;
+image/jpeg=lximage-qt.desktop;feh.desktop;zzz-gimp.desktop;gpicview.desktop;
+image/png=gpicview.desktop;lximage-qt.desktop;
+image/webp=feh.desktop;
+image/x-xpixmap=feh.desktop;
+inode/directory=pcmanfm.desktop;
+text/plain=firefox.desktop;geany.desktop;vim.desktop;mousepad.desktop;
+x-scheme-handler/tg=userapp-Telegram Desktop-VM24T0.desktop;
+application/x-mozilla-bookmarks=geany.desktop;
+video/mp4=vlc.desktop;mpv.desktop;
+video/x-matroska=mpv.desktop;vlc.desktop;
+application/pgp-encrypted=lximage-qt.desktop;
+
+[Default Applications]
+application/pdf=qpdfview.desktop;
+application/xhtml+xml=firefox.desktop;
+image/jpeg=lximage-qt.desktop;
+image/png=lximage-qt.desktop
+inode/directory=pcmanfm.desktop;
+text/html=firefox.desktop;
+text/plain=geany.desktop;
+x-scheme-handler/tg=userapp-Telegram Desktop-VM24T0.desktop;
+x-scheme-handler/mailto=thunderbird.desktop
+video/mp4=mpv.desktop

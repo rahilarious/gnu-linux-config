@@ -1,0 +1,6 @@
+;; Auto-generated file; don't edit -*- mode: lisp-data -*-
+((:url "https://wiki.archlinux.org/title/GnuPG" :title "GnuPG - ArchWiki" :time "Tue Apr 26 23:31:08 2022")
+ (:url "https://wiki.gentoo.org/wiki/GnuPG" :title "GnuPG - Gentoo Wiki" :time "Tue Apr 26 23:31:05 2022")
+ (:url "https://www.gnu.org/software/emacs/tour/" :title "GNU Emacs - Guided Tour - GNU Project" :time "Sat Apr 23 13:23:55 2022")
+ (:url "https://wiki.gentoo.org/wiki/Cross_build_environment" :title "Cross build environment - Gentoo Wiki" :time "Fri Apr 22 17:51:27 2022")
+ (:url "https://wiki.gentoo.org/wiki/Binary_package_guide" :title "Binary package guide - Gentoo Wiki" :time "Fri Apr 22 13:26:17 2022"))

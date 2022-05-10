@@ -3,8 +3,10 @@
     "telemetry.enableCrashReporter": false,
     "telemetry.enableTelemetry": false,
     "window.zoomLevel": 2,
-    "workbench.colorTheme": "Monokai",
     "editor.minimap.enabled": false,
-    "update.mode": "manual",
-    "window.menuBarVisibility": "toggle",
+    "update.mode": "none",
+    "window.menuBarVisibility": "compact",
+    "security.workspace.trust.untrustedFiles": "open",
+    "workbench.iconTheme": "Monokai Pro Icons",
+    "workbench.colorTheme": "Monokai Pro",
 }
