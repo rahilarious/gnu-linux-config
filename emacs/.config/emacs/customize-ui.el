@@ -97,6 +97,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(default ((t (:family "DejaVu Sans Mono" :foundry "PfEd" :slant normal :weight normal :height 143 :width normal))))
  '(circe-highlight-nick-face ((t (:foreground "light coral" :weight bold))))
  '(circe-server-face ((t (:foreground "deep sky blue"))))
  '(diff-added ((t (:background "forest green" :extend t :inherit diff-changed))))

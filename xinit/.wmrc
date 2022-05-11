@@ -4,4 +4,3 @@ copyq &
 picom &
 xrdb -merge ~/.Xresources
 gpg-connect-agent /bye
-lxqt-policykit-agent &

@@ -23,7 +23,8 @@ diff='diff --color=always -U 1' \
 tree='tree -a' \
 c='clear' \
 ex='exit' \
-e='emacsclient -t' \
+e='emacs -nw' \
+ec='emacsclient -t' \
 lspci='lspci -nn' \
 iotop='sudo iotop -o' \
 reload='. ~/.bashrc' \

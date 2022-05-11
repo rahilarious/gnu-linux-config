@@ -6,3 +6,9 @@
 	defaultBranch = main
 [commit]
 	gpgSign = true
+[format]
+	pretty = oneline
+[log]
+	abbrevCommit = true
+[tag]
+	gpgSign = true
