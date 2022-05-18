@@ -4,3 +4,6 @@ copyq &
 picom &
 xrdb -merge ~/.Xresources
 gpg-connect-agent /bye
+systemctl --user import-environment DISPLAY
+systemctl --user start clipmenud
+

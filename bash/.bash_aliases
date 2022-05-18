@@ -129,14 +129,14 @@ eqs='equery size' \
 
 # Open Config and RC files
 alias \
-cfgi3='emacsclient -c ~/.config/i3/config' \
+cfgi3='emacsclient -t ~/.config/i3/config' \
 cfgdwm='sudoedit /etc/portage/savedconfig/x11-wm/dwm-6.3 && sudo emerge -v --quiet-build x11-wm/dwm' \
-cfgkitty='emacsclient -c ~/.config/kitty/kitty.conf' \
-cfgalacritty='emacsclient -c ~/.config/alacritty/alacritty.yml' \
-cfgxinit='emacsclient -c ~/.xinitrc' \
-cfgpolybar='emacsclient -c ~/.config/polybar/config' \
-cfglxqtob='emacsclient -c ~/.config/openbox/lxqt-rc.xml' \
-cfgawesome='emacsclient -c ~/.config/awesome/rc.lua' \
+cfgkitty='emacsclient -t ~/.config/kitty/kitty.conf' \
+cfgalacritty='emacsclient -t ~/.config/alacritty/alacritty.yml' \
+cfgxinit='emacsclient -t ~/.xinitrc' \
+cfgpolybar='emacsclient -t ~/.config/polybar/config' \
+cfglxqtob='emacsclient -t ~/.config/openbox/lxqt-rc.xml' \
+cfgawesome='emacsclient -t ~/.config/awesome/rc.lua' \
 
 # Program specifics
 alias \

@@ -12,3 +12,5 @@
 	abbrevCommit = true
 [tag]
 	gpgSign = true
+[merge]
+	conflictStyle = diff3

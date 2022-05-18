@@ -8,5 +8,5 @@
     "window.menuBarVisibility": "compact",
     "security.workspace.trust.untrustedFiles": "open",
     "workbench.iconTheme": "Monokai Pro Icons",
-    "workbench.colorTheme": "Monokai Pro",
+    "workbench.colorTheme": "Default Light+",
 }
