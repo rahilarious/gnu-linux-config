@@ -1,7 +1,3 @@
 #!/bin/sh
-	while true; do
-	xsetroot -name " `date +" %d-%m %a |  %I:%M %p"`"
-		sleep 2
-	done &
-
+/usr/bin/slstatus &
 exec ~/.wmrc
