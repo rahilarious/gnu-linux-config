@@ -13,17 +13,17 @@ mod = "mod4"
 terminal = "st"
 
 keys = [
-    EzKey("M-j", lazy.layout.next()),
-    EzKey("M-k", lazy.layout.previous()),
-    EzKey("M-<space>", lazy.window.toggle_floating()),
+    EzKey("M-h", lazy.layout.grow()),
+    EzKey("M-l", lazy.layout.shrink()),
+    EzKey("M-j", lazy.group.next_window()),
+    EzKey("M-k", lazy.group.prev_window()),
     EzKey("M-S-h", lazy.layout.shuffle_left()),
     EzKey("M-S-l", lazy.layout.shuffle_right()),
     EzKey("M-S-j", lazy.layout.shuffle_down()),
     EzKey("M-S-k", lazy.layout.shuffle_up()),
-    EzKey("M-C-h", lazy.layout.grow_left()),
-    EzKey("M-C-l", lazy.layout.grow_right()),
-    EzKey("M-C-j", lazy.layout.grow_down()),
-    EzKey("M-C-k", lazy.layout.grow_up()),
+    EzKey("M-C-h", lazy.screen.prev_group()),
+    EzKey("M-C-l", lazy.screen.next_group()),
+    EzKey("M-<space>", lazy.window.toggle_floating()),
     EzKey("M-<Return>", lazy.spawn(terminal)),
     # Toggle between split and unsplit sides of stack.
     # Split = all windows displayed
@@ -32,12 +32,21 @@ keys = [
     EzKey("M-S-<Return>", lazy.layout.toggle_split()),
     EzKey("M-<Tab>", lazy.spawn("dmenu_run")),
     EzKey("M-q", lazy.window.kill()),
+    EzKey("M-f", lazy.window.toggle_fullscreen()),
+    EzKey("M-z", lazy.window.toggle_minimize()),
+    EzKey("M-c", lazy.window.center()),
+    EzKey("M-b", lazy.hide_show_bar()),
+    EzKey("M-o", lazy.to_layout_index(0)),
+    EzKey("M-u", lazy.to_layout_index(1)),
+    EzKey("M-t", lazy.to_layout_index(2)),
+    EzKey("M-m", lazy.to_layout_index(3)),
+    EzKey("M-w", lazy.to_layout_index(4)),
+    EzKey("M-r", lazy.labelgroup(prompt="Rename group: ")),
     EzKey("M-S-q", lazy.shutdown()),
-    EzKey("M-S-<space>", lazy.next_layout()),
+    EzKey("M-s", lazy.next_layout()),
+    EzKey("M-S-s", lazy.prev_layout()),
     Key([mod], "n", lazy.layout.normalize(), desc="Reset all window sizes"),
-    Key([mod, "shift"], "r", lazy.reload_config(), desc="Reload the config"),
-    # qtile's run prompt
-    # EzKey("M-r", lazy.spawncmd()),
+    EzKey("M-S-r", lazy.restart()),
 
     # just a keychord example, it doesnt feel stable
     #    KeyChord([mod],"a",[Key([],"p",lazy.spawn("pavucontrol"))]),
@@ -86,15 +95,15 @@ col_orange = "#ff6a4d"
 layouts = [
     # layout.Columns(border_focus_stack=["#d75f5f", "#8f3d3d"], border_width=4),
     layout.VerticalTile(border_focus=col_orange),
+    layout.MonadWide(border_focus=col_orange),
+    layout.MonadTall(border_focus=col_orange),
     layout.Max(),
     # Try more layouts by unleashing below layouts.
- #layout.Stack(num_stacks=2),
- #layout.Bsp(),
- #layout.Matrix(),
-    layout.MonadTall(border_focus=col_orange),
-    layout.MonadWide(border_focus=col_orange),
- #layout.RatioTile(),
- #layout.Tile(),
+ # layout.Stack(num_stacks=2),
+ # layout.Bsp(),
+ # layout.Matrix(),
+ # layout.RatioTile(),
+ # layout.Tile(),
     layout.TreeTab(active_bg=col_orange, panel_width=50),
  #layout.Zoomy(),
 ]
@@ -111,8 +120,8 @@ screens = [
         bottom=bar.Bar(
             [
                 widget.GroupBox(disable_drag=True,highlight_method='line',highlight_color=[col_orange],inactive='777777'),
-                # widget.Prompt(),
-                widget.CurrentLayout(background='444444'),
+                widget.CurrentLayoutIcon(scale=0.75),
+                widget.Prompt(),
                 widget.TaskList(highlight_method="block",border=col_orange),
                 # widget.Chord(
                 #     chords_colors={

@@ -1,0 +1,4 @@
+(in-package :stumpwm)
+
+;; change the prefix key to something else
+(set-prefix-key (kbd "s-b"))

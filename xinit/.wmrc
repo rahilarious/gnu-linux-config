@@ -1,5 +1,5 @@
 #!/bin/sh
-nitrogen --set-zoom-fill --random /common/wallpapers/
+#nitrogen --set-zoom-fill --random /common/wallpapers/
 copyq &
 picom &
 xrdb -merge ~/.Xresources
